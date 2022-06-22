@@ -9,9 +9,9 @@ import similaritymeasures
 
 
 class TrajectoryClustering:
-    df_move = pd.read_csv("/content/trajectory-clustering/data/input/move_days.csv")
-    df_cluster = pd.read_csv("/content/trajectory-clustering/data/input/clusters.csv")
-    df_logs = pd.read_csv("/content/trajectory-clustering/data/input/gps_logs.csv")
+    df_move = pd.read_csv("/content/gps-trajectories-clustering2/data/input/move_days.csv")
+    df_cluster = pd.read_csv("/content/gps-trajectories-clustering2/data/input/clusters.csv")
+    df_logs = pd.read_csv("/content/gps-trajectories-clustering2/data/input/gps_logs.csv")
 
     @classmethod
     def get_trajectories(cls, cluster_ini, cluster_end):
@@ -45,7 +45,7 @@ class TrajectoryClustering:
         return _traj_xy
 
     @classmethod
-    def compute_distance_matrix(cls, trajectories, method="Frechet"):
+    def compute_distance_matrix(cls, trajectories, method="Area"):
         """
         :param method: "Frechet" or "Area"
         """
